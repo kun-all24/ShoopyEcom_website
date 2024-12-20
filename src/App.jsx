@@ -7,7 +7,7 @@ function App() {
   
 
   return (
-    <h1>kunal</h1>
+    <h1 className='text-center text-3xl font-bold underline'>kunal</h1>
   )
 }
 

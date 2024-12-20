@@ -1,25 +1,34 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { addToCart } from '../redux/cartSlice';
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { addToCart } from "../redux/cartSlice";
 
 // const ProductItem = ({ product }) => {
 //   const dispatch = useDispatch();
 
 //   return (
-//     <div className="border p-4 rounded shadow-md">
-//       <h2 className="text-lg font-bold">{product.title}</h2>
-//       <p>{product.description}</p>
-//       <p className="text-green-500 font-semibold">${product.price}</p>
-//       <button
-//         className="bg-blue-500 text-white p-2 rounded mt-2 hover:bg-blue-600"
-//         onClick={() => dispatch(addToCart(product))}
-//       >
-//         Add to Cart
-//       </button>
-//       <Link to={`/products/${product.id}`} className="text-blue-500 ml-2 hover:underline">
-//         View Details
-//       </Link>
+//     <div className="bg-white border p-4 rounded shadow-md hover:shadow-lg transition">
+//       <img
+//         src={product.thumbnail} // Ensure this matches the API field for the image
+//         alt={product.title}
+//         className="w-full h-48 object-cover rounded mb-4"
+//       />
+//       <h2 className="font-bold text-lg mb-2">{product.title}</h2>
+//       <p className="text-gray-600 text-sm mb-4">${product.price}</p>
+//       <div className="flex justify-between items-center">
+//         <button
+//           className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
+//           onClick={() => dispatch(addToCart(product))}
+//         >
+//           Add to Cart
+//         </button>
+//         <Link
+//           to={`/products/${product.id}`} // Link to the product detail page
+//           className="text-blue-500 hover:underline text-sm"
+//         >
+//           View Details
+//         </Link>
+//       </div>
 //     </div>
 //   );
 // };
@@ -30,21 +39,35 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="border p-4 rounded">
-      <h2 className="font-bold">{product.title}</h2>
-      <p>{product.description}</p>
-      <p className="text-green-500">${product.price}</p>
-      <button
-        className="bg-blue-500 text-white px-2 py-1 mt-2 rounded"
-        onClick={() => dispatch(addToCart(product))}
-      >
-        Add to Cart
-      </button>
+    <div className="bg-white border p-4 rounded-lg shadow-md hover:shadow-lg transition relative">
+      <img
+        src={product.thumbnail}
+        alt={product.title}
+        className="w-full h-48 object-cover rounded mb-4"
+      />
+      <h2 className="font-bold text-lg text-gray-800 mb-2">{product.title}</h2>
+      <p className="text-gray-600 text-sm mb-4 truncate">{product.description}</p>
+      <p className="text-green-600 font-semibold mb-4">${product.price.toFixed(2)}</p>
+      <div className="flex justify-between items-center">
+        <button
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+          onClick={() => dispatch(addToCart(product))}
+        >
+          Add to Cart
+        </button>
+        <Link
+          to={`/products/${product.id}`}
+          className="text-blue-500 hover:underline text-sm"
+        >
+          View Details
+        </Link>
+      </div>
     </div>
   );
 };

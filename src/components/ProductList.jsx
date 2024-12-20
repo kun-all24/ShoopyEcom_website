@@ -1,32 +1,26 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import ProductItem from './ProductItem';
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+// import ProductItem from "./ProductItem";
 
 // const ProductList = () => {
 //   const [products, setProducts] = useState([]);
-//   const [search, setSearch] = useState('');
-//   const [sortBy, setSortBy] = useState('');
+//   const [search, setSearch] = useState("");
+//   const [sortBy, setSortBy] = useState("");
 
 //   useEffect(() => {
-//     const fetchProducts = async () => {
-//       try {
-//         const response = await axios.get('https://dummyjson.com/products');
-//         setProducts(response.data.products);
-//       } catch (error) {
-//         console.error('Error fetching products:', error);
-//       }
-//     };
-//     fetchProducts();
+//     axios.get("https://dummyjson.com/products").then((res) => {
+//       setProducts(res.data.products);
+//     });
 //   }, []);
 
 //   const handleSort = (criteria) => {
-//     setSortBy(criteria);
-//     const sortedProducts = [...products].sort((a, b) => {
-//       if (criteria === 'price') return a.price - b.price;
-//       if (criteria === 'title') return a.title.localeCompare(b.title);
+//     const sorted = [...products].sort((a, b) => {
+//       if (criteria === "price") return a.price - b.price;
+//       if (criteria === "title") return a.title.localeCompare(b.title);
 //       return 0;
 //     });
-//     setProducts(sortedProducts);
+//     setProducts(sorted);
+//     setSortBy(criteria);
 //   };
 
 //   const filteredProducts = products.filter((product) =>
@@ -35,16 +29,16 @@
 
 //   return (
 //     <div className="p-4">
-//       <div className="flex justify-between items-center mb-4">
+//       <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
 //         <input
 //           type="text"
 //           placeholder="Search products..."
-//           className="p-2 border rounded w-full md:w-1/3"
+//           className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 w-full md:w-1/3"
 //           value={search}
 //           onChange={(e) => setSearch(e.target.value)}
 //         />
 //         <select
-//           className="ml-4 p-2 border rounded"
+//           className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 w-full md:w-1/3"
 //           value={sortBy}
 //           onChange={(e) => handleSort(e.target.value)}
 //         >
@@ -53,7 +47,7 @@
 //           <option value="title">Title</option>
 //         </select>
 //       </div>
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+//       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 //         {filteredProducts.map((product) => (
 //           <ProductItem key={product.id} product={product} />
 //         ))}
@@ -63,6 +57,7 @@
 // };
 
 // export default ProductList;
+
 
 
 import React, { useState, useEffect } from "react";
@@ -95,17 +90,17 @@ const ProductList = () => {
   );
 
   return (
-    <div className="p-4">
-      <div className="flex gap-4 mb-4">
+    <div className="pt-20 p-4 bg-gray-100 min-h-screen">
+      <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
         <input
           type="text"
-          placeholder="Search..."
-          className="p-2 border rounded"
+          placeholder="Search products..."
+          className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 w-full md:w-1/3"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <select
-          className="p-2 border rounded"
+          className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 w-full md:w-1/3"
           value={sortBy}
           onChange={(e) => handleSort(e.target.value)}
         >
@@ -114,7 +109,7 @@ const ProductList = () => {
           <option value="title">Title</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
           <ProductItem key={product.id} product={product} />
         ))}

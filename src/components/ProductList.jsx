@@ -90,17 +90,17 @@ const ProductList = () => {
   );
 
   return (
-    <div className="pt-20 p-4 bg-gray-100 min-h-screen">
-      <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
+    <div className="pt-20 p-4 bg-sky-100 min-h-screen">
+      <div className="flex flex-col md:flex-row gap-4 mb-6 items-center ">
         <input
           type="text"
           placeholder="Search products..."
-          className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 w-full md:w-1/3"
+          className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 w-full md:w-1/3"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <select
-          className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 w-full md:w-1/3"
+          className="p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 w-full md:w-1/3"
           value={sortBy}
           onChange={(e) => handleSort(e.target.value)}
         >

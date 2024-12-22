@@ -33,7 +33,7 @@ import NotFound from "./components/NotFound";
 
 const App = () => (
   <Router>
-    <div className="min-h-screen bg-gradient-to-r from-green-500 to-blue-500 transition-all duration-500">
+    <div className="min-h-screen bg-gray-300 transition-all duration-500">
       <Header />
       <Routes>
         <Route path="/" element={<ProductList />} />

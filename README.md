@@ -11,7 +11,7 @@ Currently, two official plugins are available:
 
 ## Git Link
 
-Provide the GitHub repository link here.
+https://github.com/kun-all24/ShoopyEcom_website
 -----
 
 ## Features

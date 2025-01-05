@@ -12,7 +12,7 @@ Currently, two official plugins are available:
 ## Git Link
 
 https://github.com/kun-all24/ShoopyEcom_website
------
+----
 
 ## Features
 
@@ -49,7 +49,7 @@ https://github.com/kun-all24/ShoopyEcom_website
 ## Project Setup and Running Instructions
 
 ## 1. Clone the Repository
-git clone https://github.com/your-username/shoopy.git
+git clone https://github.com/kun-all24/ShoopyEcom_website
 
 ## 2. Install Dependencies
 cd vite-project
